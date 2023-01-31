@@ -5,9 +5,9 @@ using UnityEngine.InputSystem;
 
 public class SC_GrabCompenent : MonoBehaviour
 {
-    private SpriteRenderer sprite;
     private Color baseColor;
-    private bool IsMouseOver;
+    public Joint2D joint;
+    private SpriteRenderer sprite;
 
     private void Awake()
     {
@@ -15,28 +15,32 @@ public class SC_GrabCompenent : MonoBehaviour
         baseColor = sprite.color;
     }
 
-    private void OnMouseEnter()
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        IsMouseOver = true;
-        sprite.color = Color.red;
+        if(col.CompareTag("Player"))
+        {
+            sprite.color = Color.red;
+        }
     }
 
-    private void OnMouseExit()
+    private void OnTriggerExit2D(Collider2D col)
     {
-        IsMouseOver = false;
-        sprite.color = baseColor;
+        if(col.CompareTag("Player"))
+        {
+            sprite.color = baseColor;
+        }
     }
 
-    public void Grab(InputAction.CallbackContext ctx)
+    public void Grab(Rigidbody2D rb)
     {
-        if(ctx.performed && IsMouseOver)
-        {
-            Debug.Log("Grab");
-        }
+        joint.connectedBody = rb;
+    }
 
-        if(ctx.canceled)
-        {
-            Debug.Log("Grab_Canceled");
-        }
+    public void CancelGrab()
+    {
+        if(joint.connectedBody == null)
+            return;
+
+        joint.connectedBody = null;
     }
 }

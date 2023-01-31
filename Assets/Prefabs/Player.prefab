@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1427442206473593316}
   - component: {fileID: 1427442206473593323}
   - component: {fileID: 1427442206473593322}
-  - component: {fileID: 1427442206473593312}
+  - component: {fileID: 6377061071617177016}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -227,9 +227,9 @@ MonoBehaviour:
     m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3236117811715544024, guid: 23a1ec8737bcc1d45aef44cc1574fd0c, type: 3}
-        m_TargetAssemblyTypeName: SC_GrabCompenent, Assembly-CSharp
-        m_MethodName: Grab
+      - m_Target: {fileID: 1427442206473593322}
+        m_TargetAssemblyTypeName: SC_PlayerMovement, Assembly-CSharp
+        m_MethodName: TryGrab
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -265,7 +265,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 128
---- !u!120 &1427442206473593312
+--- !u!120 &6377061071617177016
 LineRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -308,7 +308,7 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: -1.76, z: 0}
-  - {x: 9, y: 4.5, z: 0}
+  - {x: 0, y: 4.5, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.1

@@ -6,28 +6,19 @@ using UnityEngine.InputSystem;
 public class SC_GrabCompenent : MonoBehaviour
 {
     private Color baseColor;
-    private bool isTrigger;
     public Joint2D joint;
     private SpriteRenderer sprite;
-    private Rigidbody2D playerRb;
-    private LineRenderer lineRenderer;
-    public GameObject player;
-    private Vector3 playerPos;
 
     private void Awake()
     {
-        playerRb = player.GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
-        lineRenderer = player.GetComponent<LineRenderer>();
         baseColor = sprite.color;
-        lineRenderer.enabled = false;
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
         if(col.CompareTag("Player"))
         {
-            isTrigger = true;
             sprite.color = Color.red;
         }
     }
@@ -36,32 +27,20 @@ public class SC_GrabCompenent : MonoBehaviour
     {
         if(col.CompareTag("Player"))
         {
-            isTrigger = false;
             sprite.color = baseColor;
         }
     }
 
-    private void Update()
+    public void Grab(Rigidbody2D rb)
     {
-        playerPos = player.transform.position;
-        lineRenderer.SetPosition(0, playerPos);
-        lineRenderer.SetPosition(1, joint.transform.position);
+        joint.connectedBody = rb;
     }
 
-    public void Grab(InputAction.CallbackContext ctx)
+    public void CancelGrab()
     {
-        if(ctx.performed && isTrigger == true)
-        {
-            lineRenderer.enabled = true;
-            Debug.Log("Grab");
-            joint.connectedBody = playerRb;
-        }
+        if(joint.connectedBody == null)
+            return;
 
-        if(ctx.canceled && joint.connectedBody != null)
-        {
-            lineRenderer.enabled = false;
-            Debug.Log("Grab_Canceled");
-            joint.connectedBody = null;
-        }
+        joint.connectedBody = null;
     }
 }

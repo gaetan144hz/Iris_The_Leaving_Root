@@ -60,14 +60,12 @@ public class SC_GrapplingGun  : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             SetGrapplePoint();
-            Debug.Log("SetGrapplePoint");
         }
         else if (Input.GetKey(KeyCode.Mouse0))
         {
             if (grappleRope.enabled)
             {
                 RotateGun(grapplePoint, false);
-                Debug.Log("grappleRopeRealese???");
             }
             else
             {

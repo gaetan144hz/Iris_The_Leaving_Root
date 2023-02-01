@@ -6,11 +6,12 @@ using UnityEngine;
 
 public class SC_DeathZone : MonoBehaviour
 {
-    private Transform playerPosition;
+    [SerializeField] public Transform checkPoint;
+    [SerializeField] private GameObject player;
 
     void Start()
     {
-        playerPosition = GameObject.FindGameObjectWithTag("Player").transform;
+        checkPoint = FindObjectOfType<SC_Checkpoint>().transform;
     }
 
     void Update()
@@ -22,7 +23,7 @@ public class SC_DeathZone : MonoBehaviour
     {
         if (!col.gameObject.CompareTag("Player"))
             return;
-        col.transform.position = playerPosition.position;
-        Debug.Log(col.transform.position);
+        col.gameObject.transform.position = checkPoint.position;
+        Debug.Log(checkPoint.position);
     }
 }

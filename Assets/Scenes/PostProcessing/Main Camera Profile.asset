@@ -21,10 +21,10 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.456
+    value: 0.706
   size:
     overrideState: 1
-    value: 1.56
+    value: 2.21
   lumContrib:
     overrideState: 1
     value: 0.652
@@ -46,7 +46,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: -2
+    value: -0.16
   intensityX:
     overrideState: 1
     value: 0.556
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb84e30e02715445aeb9959894e3b4d, type: 3}
   m_Name: ColorGrading
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1

@@ -33,6 +33,9 @@ public class SC_PlayerMovement : MonoBehaviour
     {
         moveInput = ctx.ReadValue<Vector2>().x;
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+
+        if (ctx.canceled)
+            rb.velocity = Vector2.zero;
     }
 
     public void Jump(InputAction.CallbackContext ctx)
@@ -50,17 +53,23 @@ public class SC_PlayerMovement : MonoBehaviour
             return;
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+            grabTarget = null;
+    }
+
     public void TryGrab(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed)
+        if (ctx.performed && grabTarget != null)
         {
             lineRenderer.SetPosition(1, grabTarget.joint.transform.position);
             lineRenderer.enabled = true;
             grabTarget.Grab(rb);
         }
 
-        if (ctx.canceled)
+        if (ctx.canceled && grabTarget != null)
         {
+            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
             lineRenderer.enabled = false;
             grabTarget.CancelGrab();
         }

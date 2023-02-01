@@ -14,9 +14,9 @@ public class SC_GrabCompenent : MonoBehaviour
 
     public void CancelGrab()
     {
-        if(joint.connectedBody == null)
-            return;
-
-        joint.connectedBody = null;
+        if(joint.connectedBody != null)
+        {
+            joint.connectedBody = null;
+        }
     }
 }

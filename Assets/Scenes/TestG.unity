@@ -1128,26 +1128,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 812845773}
     m_Modifications:
-    - target: {fileID: 410078033761205890, guid: 23a1ec8737bcc1d45aef44cc1574fd0c, type: 3}
-      propertyPath: m_Anchor.x
-      value: 0.0000009536743
-      objectReference: {fileID: 0}
-    - target: {fileID: 410078033761205890, guid: 23a1ec8737bcc1d45aef44cc1574fd0c, type: 3}
-      propertyPath: m_Anchor.y
-      value: 0.00000011920929
-      objectReference: {fileID: 0}
-    - target: {fileID: 410078033761205891, guid: 23a1ec8737bcc1d45aef44cc1574fd0c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 410078033761205891, guid: 23a1ec8737bcc1d45aef44cc1574fd0c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 410078034102256013, guid: 23a1ec8737bcc1d45aef44cc1574fd0c, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 410078034102256013, guid: 23a1ec8737bcc1d45aef44cc1574fd0c, type: 3}
       propertyPath: m_Name
       value: GrabTarget

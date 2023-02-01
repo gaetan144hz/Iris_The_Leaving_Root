@@ -1,21 +1,19 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class SC_KillerRacine : MonoBehaviour
+public class SC_DeathZone : MonoBehaviour
 {
+    private Transform playerPosition;
+
     void Start()
     {
-        
+        playerPosition = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collider col)
     {
         
     }
@@ -24,7 +22,7 @@ public class SC_KillerRacine : MonoBehaviour
     {
         if (!col.gameObject.CompareTag("Player"))
             return;
-        Destroy(col.gameObject);
-        Debug.Log(col.gameObject);
+        col.transform.position = playerPosition.position;
+        Debug.Log(col.transform.position);
     }
 }

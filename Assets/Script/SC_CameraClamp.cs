@@ -22,8 +22,8 @@ public class SC_CameraClamp : MonoBehaviour
         Debug.Log("Plus de Player");
 */
         transform.position = new Vector3(
-            Mathf.Clamp(targetFollow.position.x, minX, maxX),
-            Mathf.Clamp(targetFollow.position.y, minY, maxY),
+            Mathf.Clamp(transform.position.x, minX, maxX),
+            Mathf.Clamp(transform.position.y, minY, maxY),
             transform.position.z);
     }
 }

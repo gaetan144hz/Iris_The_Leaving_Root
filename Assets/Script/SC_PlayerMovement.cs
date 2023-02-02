@@ -5,15 +5,18 @@ using UnityEngine.InputSystem;
 
 public class SC_PlayerMovement : MonoBehaviour
 {
+    [Header("Raycast")]
+    public Queue<RaycastHit2D> _raycastQueue;
+    [SerializeField] private float[] raycastMaxDistance;
+    [SerializeField] private LayerMask _layerMask;
+
+    [Header("Mouvement")] 
     private Rigidbody2D rb;
     private float moveInput;
     public float speed;
     public float jumpForce;
 
     private bool isGrounded;
-    public Transform feetPos;
-    public float checkRadius;
-    public LayerMask whatIsGround;
     private SC_GrabCompenent grabTarget;
     private LineRenderer lineRenderer;
     private bool isGrab;
@@ -23,16 +26,34 @@ public class SC_PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         lineRenderer = GetComponent<LineRenderer>();
+        _raycastQueue = new Queue<RaycastHit2D>();
     }
 
     private void Update()
     {
         lineRenderer.SetPosition(0, this.gameObject.transform.position);
-        isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
-
+        
         if(grabTarget != null)
         {
             lineRenderer.SetPosition(1, grabTarget.joint.transform.position);
+        }
+
+        var raycast = Physics2D.Raycast(transform.position, transform.up, raycastMaxDistance[0], _layerMask);
+        Debug.DrawRay(transform.position, transform.up * raycastMaxDistance[0], Color.magenta);
+
+        _raycastQueue.Enqueue(raycast);
+        Debug.Log(raycast);//rajoute le resulat d un raycast a la file d'attente
+        // rajout de raycast, tabeau de vector2/distance pour les modifiés un par un les valeurs
+
+        while (_raycastQueue.Count > 0) //tant que'il y a plus de 0 element dans la file d'attente 
+        {
+            var result = _raycastQueue.Dequeue(); //on recupere le prochaine element de la file d'attente
+                
+            if (result.collider != null)
+            {
+                Debug.Log("isGrounded" + isGrounded);
+                isGrounded = true;
+            }
         }
     }
 

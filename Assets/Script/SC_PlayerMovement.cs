@@ -16,6 +16,8 @@ public class SC_PlayerMovement : MonoBehaviour
     public LayerMask whatIsGround;
     private SC_GrabCompenent grabTarget;
     private LineRenderer lineRenderer;
+    private bool isGrab;
+    private DistanceJoint2D jointDistance;
 
     private void Awake()
     {
@@ -27,6 +29,11 @@ public class SC_PlayerMovement : MonoBehaviour
     {
         lineRenderer.SetPosition(0, this.gameObject.transform.position);
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
+
+        if(grabTarget != null)
+        {
+            lineRenderer.SetPosition(1, grabTarget.joint.transform.position);
+        }
     }
 
     public void Move(InputAction.CallbackContext ctx)
@@ -49,22 +56,28 @@ public class SC_PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.TryGetComponent<SC_GrabCompenent>(out grabTarget))
-            return;
+        if (grabTarget == null)
+        {
+            collision.TryGetComponent<SC_GrabCompenent>(out grabTarget);
+        }
+        else return;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (isGrab == false)
+        {
             grabTarget = null;
+        }
     }
-
     public void TryGrab(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed && grabTarget != null)
+        if (ctx.performed && grabTarget != null && isGrab == false)
         {
             lineRenderer.SetPosition(1, grabTarget.joint.transform.position);
             lineRenderer.enabled = true;
             grabTarget.Grab(rb);
+            isGrab = true;
         }
 
         if (ctx.canceled && grabTarget != null)
@@ -72,6 +85,7 @@ public class SC_PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
             lineRenderer.enabled = false;
             grabTarget.CancelGrab();
+            isGrab = false;
         }
     }
 }

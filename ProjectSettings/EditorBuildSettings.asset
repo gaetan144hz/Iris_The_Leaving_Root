@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Pre_Menu.unity
+    path: Assets/Scenes/Cinematique.unity
     guid: 8d00d7fa4808e8347ad79c3ed3d4a436
   - enabled: 1
     path: Assets/Scenes/Menu.unity
@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Proto.unity
     guid: ab6919d58bb7991408e2b261d30562cb
   - enabled: 1
-    path: Assets/Scenes/FirstLevelProto.unity
+    path: Assets/Scenes/Game.unity
     guid: c914ae58f2925f048b5621d4d59c2073
   - enabled: 1
     path: Assets/Scenes/Controls.unity

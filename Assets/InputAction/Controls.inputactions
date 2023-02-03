@@ -49,6 +49,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "menuOn",
+                    "type": "Button",
+                    "id": "c51fbdf4-2ef1-4f6b-914e-1925612614e2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "menuOff",
+                    "type": "Button",
+                    "id": "cd6eafc4-f940-497a-a77b-1127847a4277",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -183,6 +201,28 @@
                     "action": "distance",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "364b1530-c61f-4a5c-ba00-8fe5d752c0f4",
+                    "path": "<Keyboard>/pageUp",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "menuOn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "761e4fa5-4193-48dd-ba63-124e6358c954",
+                    "path": "<Keyboard>/pageDown",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "menuOff",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

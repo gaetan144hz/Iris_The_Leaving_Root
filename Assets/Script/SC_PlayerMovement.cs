@@ -18,7 +18,7 @@ public class SC_PlayerMovement : MonoBehaviour
     public float speed;
     public float jumpForce;
 
-    private bool isGrounded;
+    public bool isGrounded;
     private SC_GrabCompenent grabTarget;
     private LineRenderer lineRenderer;
     private bool isGrab;
@@ -27,6 +27,8 @@ public class SC_PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        this.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+        
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();

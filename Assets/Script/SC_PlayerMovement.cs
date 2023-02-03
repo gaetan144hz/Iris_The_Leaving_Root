@@ -12,6 +12,8 @@ public class SC_PlayerMovement : MonoBehaviour
 
     [Header("Mouvement")] 
     private Rigidbody2D rb;
+    private SpriteRenderer sprite;
+    private Animator animator;
     private float moveInput;
     public float speed;
     public float jumpForce;
@@ -20,13 +22,21 @@ public class SC_PlayerMovement : MonoBehaviour
     private SC_GrabCompenent grabTarget;
     private LineRenderer lineRenderer;
     private bool isGrab;
-    private DistanceJoint2D jointDistance;
+    private bool inTrigger;
+    [SerializeField] private Color playerColor;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
         lineRenderer = GetComponent<LineRenderer>();
         _raycastQueue = new Queue<RaycastHit2D>();
+    }
+
+    private void Start()
+    {
+        animator.Play("spawn");
     }
 
     private void Update()
@@ -62,14 +72,24 @@ public class SC_PlayerMovement : MonoBehaviour
         moveInput = ctx.ReadValue<Vector2>().x;
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
 
+        if(moveInput < 0)
+        {
+            sprite.flipX = true;
+        }
+        else if(moveInput > 0)
+        {
+            sprite.flipX = false;
+        }
+
         if (ctx.canceled)
-            rb.velocity = Vector2.zero;
+            rb.velocity = new Vector2(0, rb.velocity.y);
     }
 
     public void Jump(InputAction.CallbackContext ctx)
     {
         if(ctx.performed && isGrounded == true)
         {
+            animator.Play("jump");
             rb.velocity = new Vector2(moveInput * speed, jumpForce);
             isGrounded = false;
         }
@@ -77,6 +97,8 @@ public class SC_PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        inTrigger = true;
+
         if (grabTarget == null)
         {
             collision.TryGetComponent<SC_GrabCompenent>(out grabTarget);
@@ -86,7 +108,9 @@ public class SC_PlayerMovement : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (isGrab == false)
+        inTrigger = false;
+
+        if(isGrab == false)
         {
             grabTarget = null;
         }
@@ -95,6 +119,7 @@ public class SC_PlayerMovement : MonoBehaviour
     {
         if (ctx.performed && grabTarget != null && isGrab == false)
         {
+            lineRenderer.SetColors(playerColor, grabTarget.flowerColor);
             lineRenderer.SetPosition(1, grabTarget.joint.transform.position);
             lineRenderer.enabled = true;
             grabTarget.Grab(rb);
@@ -107,6 +132,11 @@ public class SC_PlayerMovement : MonoBehaviour
             lineRenderer.enabled = false;
             grabTarget.CancelGrab();
             isGrab = false;
+
+            if(grabTarget != null && inTrigger == false)
+            {
+                grabTarget = null;
+            }
         }
     }
 }

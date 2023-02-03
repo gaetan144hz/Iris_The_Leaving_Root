@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 634a3246489ddcb46b79d874cf8c1726
+guid: 14f96d78a1f84894da3661c50a4b3262
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 600
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: colo png saut iris 17_0
+      name: colo se relever 1_0
       rect:
         serializedVersion: 2
-        x: 579
-        y: 113
-        width: 642
-        height: 701
+        x: 866
+        y: 194
+        width: 218
+        height: 193
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c609a1cf0b2833445940c4f84d26c953
-      internalID: 7286369
+      spriteID: 8da28de847f24dd45a44215d857f1993
+      internalID: -1066692163
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      colo png saut iris 17_0: 7286369
+      colo se relever 1_0: -1066692163
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -7,14 +7,10 @@ using UnityEngine.InputSystem;
 public class SC_GrabCompenent : MonoBehaviour
 {
     public Joint2D joint;
-    private SpriteRenderer rockSprite;
+    public SpriteRenderer rockSprite;
     [SerializeField] private Sprite newRockSprite;
     [SerializeField] private Sprite oldRockSprite;
-
-    private void Start()
-    {
-        rockSprite = this.GetComponent<SpriteRenderer>();
-    }
+    public Color flowerColor;
 
     public void Grab(Rigidbody2D rb)
     {

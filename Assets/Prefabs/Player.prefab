@@ -242,6 +242,7 @@ MonoBehaviour:
     m_Bits: 128
   speed: 5
   jumpForce: 10
+  isGrounded: 0
 --- !u!120 &6377061071617177016
 LineRenderer:
   m_ObjectHideFlags: 0

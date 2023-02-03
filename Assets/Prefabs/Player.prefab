@@ -243,6 +243,7 @@ MonoBehaviour:
   speed: 5
   jumpForce: 10
   isGrounded: 0
+  playerColor: {r: 0.7607844, g: 0.86666673, b: 0.50980395, a: 1}
 --- !u!120 &6377061071617177016
 LineRenderer:
   m_ObjectHideFlags: 0

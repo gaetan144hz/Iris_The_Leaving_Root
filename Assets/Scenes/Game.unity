@@ -1480,8 +1480,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joint: {fileID: 363154633}
+  rockSprite: {fileID: 0}
   newRockSprite: {fileID: 0}
   oldRockSprite: {fileID: 0}
+  flowerColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &363154636
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2835,8 +2837,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joint: {fileID: 690704211}
+  rockSprite: {fileID: 0}
   newRockSprite: {fileID: 0}
   oldRockSprite: {fileID: 0}
+  flowerColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &690704214
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2924,7 +2928,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1427442206473593319, guid: d1daceb740d627b4297cf5d8a3083d81, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1427442206473593319, guid: d1daceb740d627b4297cf5d8a3083d81, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5260,7 +5264,7 @@ Transform:
   m_Children:
   - {fileID: 1810718034}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1387962328
 PrefabInstance:
@@ -5666,8 +5670,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joint: {fileID: 1464907518}
+  rockSprite: {fileID: 0}
   newRockSprite: {fileID: 0}
   oldRockSprite: {fileID: 0}
+  flowerColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &1464907521
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6813,8 +6819,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joint: {fileID: 1716851638}
+  rockSprite: {fileID: 0}
   newRockSprite: {fileID: 0}
   oldRockSprite: {fileID: 0}
+  flowerColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &1716851641
 BoxCollider2D:
   m_ObjectHideFlags: 0

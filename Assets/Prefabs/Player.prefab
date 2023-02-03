@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1427442206473593322}
   - component: {fileID: 6377061071617177016}
   - component: {fileID: 1780121315}
+  - component: {fileID: 8597782785193465545}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -218,6 +219,30 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 7dfdd455-79bc-47ee-af54-9aaa2d31f127
     m_ActionName: Player/distance[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c51fbdf4-2ef1-4f6b-914e-1925612614e2
+    m_ActionName: Player/menuOn[/Keyboard/pageUp]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cd6eafc4-f940-497a-a77b-1127847a4277
+    m_ActionName: Player/menuOff[/Keyboard/pageDown]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8597782785193465545}
+        m_TargetAssemblyTypeName: SC_SceneSwitcher, Assembly-CSharp
+        m_MethodName: onQuit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0dc8e0ae-6721-4a89-b6ae-566e854412aa
+    m_ActionName: Player/Quit[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -363,3 +388,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8597782785193465545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427442206473593321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93545311f9dacb341a8687e7d1ab24f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

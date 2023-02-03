@@ -73,8 +73,9 @@ public class SC_PlayerMovement : MonoBehaviour
     {
         moveInput = ctx.ReadValue<Vector2>().x;
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        animator.SetBool("Speed", true);
 
-        if(moveInput < 0)
+        if (moveInput < 0)
         {
             sprite.flipX = true;
         }
@@ -82,9 +83,10 @@ public class SC_PlayerMovement : MonoBehaviour
         {
             sprite.flipX = false;
         }
-
-        if (ctx.canceled)
-            rb.velocity = new Vector2(0, rb.velocity.y);
+        else if(moveInput == 0)
+        {
+            animator.SetBool("Speed", false);
+        }
     }
 
     public void Jump(InputAction.CallbackContext ctx)

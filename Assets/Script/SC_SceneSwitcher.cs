@@ -7,24 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class SC_SceneSwitcher : MonoBehaviour
 {
-    public void toMenu()
+    public void sceneSwitcher(int sceneID)
     {
-        SceneManager.LoadScene(0);
-    }
-    
-    public void toGame()
-    {
-        SceneManager.LoadScene(1);
-    }
-
-    public void toControls()
-    {
-        SceneManager.LoadScene(2);
-    }
-    
-    public void toCredits()
-    {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(sceneID);
     }
 
     public void onQuit()

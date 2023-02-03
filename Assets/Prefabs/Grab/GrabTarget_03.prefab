@@ -101,8 +101,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joint: {fileID: 1506444775207581407}
-  newRockSprite: {fileID: 670578399, guid: ddf3a467cbbb938489de6f5a95e5e37c, type: 3}
-  oldRockSprite: {fileID: 1212438898, guid: dda74286b4aeade4188c0a520aa207ce, type: 3}
+  rockSprite: {fileID: 1506444774865914321}
+  newRockSprite: {fileID: -378111683, guid: 0a92fd2c540493c4a8d72bc58f6818c1, type: 3}
+  oldRockSprite: {fileID: -378111683, guid: 0a92fd2c540493c4a8d72bc58f6818c1, type: 3}
+  flowerColor: {r: 0.8352942, g: 0.38823533, b: 0.87843144, a: 1}
 --- !u!61 &6104741350725412264
 BoxCollider2D:
   m_ObjectHideFlags: 0

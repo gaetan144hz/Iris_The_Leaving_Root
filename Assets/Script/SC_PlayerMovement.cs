@@ -38,6 +38,7 @@ public class SC_PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = false;
         animator.Play("spawn");
     }
 

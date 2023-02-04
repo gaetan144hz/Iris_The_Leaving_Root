@@ -20,6 +20,7 @@ public class SC_Escape : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Cursor.visible = true;
             escapeScreen.SetActive(true);
         }
     }

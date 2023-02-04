@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2651157278025306262}
   - component: {fileID: 2651157278025306263}
   - component: {fileID: 2651157278025306259}
+  - component: {fileID: 8010906136996573384}
   m_Layer: 0
   m_Name: Racine_Mere
   m_TagString: Untagged
@@ -84,7 +85,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &2651157278025306262
@@ -144,3 +145,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11.76257, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &8010906136996573384
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2651157278025306260}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fcef1d4c2d738fa4897579866c7795c7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

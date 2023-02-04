@@ -15,5 +15,6 @@ public class SC_SceneSwitcher : MonoBehaviour
     public void onQuit()
     {
         Application.Quit();
+        Debug.Log("Jeu Quitté");
     }
 }

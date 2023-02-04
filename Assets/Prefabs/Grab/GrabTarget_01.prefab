@@ -137,9 +137,9 @@ GameObject:
   m_Component:
   - component: {fileID: 410078034102256015}
   - component: {fileID: 410078034102256012}
-  - component: {fileID: 3236117811715544024}
   - component: {fileID: 5039371492284640757}
   - component: {fileID: 3923529884641708799}
+  - component: {fileID: 7212307170324510622}
   m_Layer: 0
   m_Name: GrabTarget_01
   m_TagString: Untagged
@@ -215,23 +215,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3236117811715544024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 410078034102256013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9960c89567932c245b86bfd8fdd636b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  joint: {fileID: 410078033761205890}
-  rockSprite: {fileID: 410078034102256012}
-  newRockSprite: {fileID: 1212438898, guid: dda74286b4aeade4188c0a520aa207ce, type: 3}
-  oldRockSprite: {fileID: 1212438898, guid: dda74286b4aeade4188c0a520aa207ce, type: 3}
-  flowerColor: {r: 0.60784316, g: 0.15686275, b: 0.7803922, a: 1}
 --- !u!61 &5039371492284640757
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -284,6 +267,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.02, y: 2.13}
   m_EdgeRadius: 0
+--- !u!114 &7212307170324510622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410078034102256013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9960c89567932c245b86bfd8fdd636b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joint: {fileID: 410078033761205890}
+  rockSprite: {fileID: 410078034102256012}
+  newRockSprite: {fileID: 1212438898, guid: dda74286b4aeade4188c0a520aa207ce, type: 3}
+  oldRockSprite: {fileID: 1212438898, guid: dda74286b4aeade4188c0a520aa207ce, type: 3}
+  flowerColor: {r: 0.7846811, g: 0.37166253, b: 0.9056604, a: 0}
 --- !u!1 &1983269089243433378
 GameObject:
   m_ObjectHideFlags: 0

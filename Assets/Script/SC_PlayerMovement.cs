@@ -73,7 +73,7 @@ public class SC_PlayerMovement : MonoBehaviour
     {
         moveInput = ctx.ReadValue<Vector2>().x;
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
-        animator.SetBool("Speed", true);
+        //animator.SetBool("Speed", true);
 
         if (moveInput < 0)
         {
@@ -85,7 +85,8 @@ public class SC_PlayerMovement : MonoBehaviour
         }
         else if(moveInput == 0)
         {
-            animator.SetBool("Speed", false);
+            //animator.SetBool("Speed", false);
+            return;
         }
     }
 

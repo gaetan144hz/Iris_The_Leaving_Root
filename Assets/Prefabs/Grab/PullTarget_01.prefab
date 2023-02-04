@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6165500323848606071}
   - component: {fileID: 6165500323848606070}
   - component: {fileID: 6165500323848605961}
-  - component: {fileID: 6165500323848606068}
   - component: {fileID: 6165500323848606066}
   - component: {fileID: 6165500323848606067}
+  - component: {fileID: 3928164749595642941}
   m_Layer: 0
   m_Name: PullTarget_01
   m_TagString: Untagged
@@ -115,24 +115,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.9020586, y: 1.8206524}
   m_EdgeRadius: 0
---- !u!114 &6165500323848606068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6165500323848605960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9960c89567932c245b86bfd8fdd636b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  joint: {fileID: 6165500323848606067}
-  rockSprite: {fileID: 6165500324493198417}
-  newRockSprite: {fileID: 1500829848, guid: 0c143726b3296064bb643174da0033e9, type: 3}
-  oldRockSprite: {fileID: 1624574308, guid: a58aea4d7bb9aea47954d60e6d1fc0ed, type: 3}
-  flowerColor: {r: 0.16862746, g: 0.24313727, b: 0.7803922, a: 1}
-  rbRockChild: {fileID: 6165500324493198416}
 --- !u!50 &6165500323848606066
 Rigidbody2D:
   serializedVersion: 4
@@ -173,6 +155,23 @@ DistanceJoint2D:
   m_AutoConfigureDistance: 0
   m_Distance: 3.7
   m_MaxDistanceOnly: 1
+--- !u!114 &3928164749595642941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6165500323848605960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9960c89567932c245b86bfd8fdd636b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joint: {fileID: 6165500323848606067}
+  rockSprite: {fileID: 6165500324493198417}
+  newRockSprite: {fileID: 1500829848, guid: 0c143726b3296064bb643174da0033e9, type: 3}
+  oldRockSprite: {fileID: 1624574308, guid: a58aea4d7bb9aea47954d60e6d1fc0ed, type: 3}
+  flowerColor: {r: 0.21542363, g: 0.42938548, b: 0.9716981, a: 0}
 --- !u!1 &6165500324493198418
 GameObject:
   m_ObjectHideFlags: 0

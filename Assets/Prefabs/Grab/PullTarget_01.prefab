@@ -102,7 +102,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.0628116, y: -0.41032618}
+  m_Offset: {x: 1.0214334, y: -0.41032618}
   m_SpriteTilingProperty:
     border: {x: 1.01, y: 0.95000005, z: 1.09, w: 0.582}
     pivot: {x: 0.5, y: 0.5}
@@ -113,7 +113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.3856025, y: 1.8206524}
+  m_Size: {x: 6.9020586, y: 1.8206524}
   m_EdgeRadius: 0
 --- !u!114 &6165500323848606068
 MonoBehaviour:
@@ -132,6 +132,7 @@ MonoBehaviour:
   newRockSprite: {fileID: 1500829848, guid: 0c143726b3296064bb643174da0033e9, type: 3}
   oldRockSprite: {fileID: 1624574308, guid: a58aea4d7bb9aea47954d60e6d1fc0ed, type: 3}
   flowerColor: {r: 0.16862746, g: 0.24313727, b: 0.7803922, a: 1}
+  rbRockChild: {fileID: 6165500324493198416}
 --- !u!50 &6165500323848606066
 Rigidbody2D:
   serializedVersion: 4
@@ -170,7 +171,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 3
+  m_Distance: 3.7
   m_MaxDistanceOnly: 1
 --- !u!1 &6165500324493198418
 GameObject:
@@ -271,7 +272,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.07575691}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -282,7 +283,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.37, y: 3.91}
+  m_Size: {x: 3.37, y: 3.7584863}
   m_EdgeRadius: 0
 --- !u!1 &6894106756192208495
 GameObject:

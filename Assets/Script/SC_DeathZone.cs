@@ -11,7 +11,7 @@ public class SC_DeathZone : MonoBehaviour
 
     void Start()
     {
-        checkPoint = FindObjectOfType<SC_Checkpoint>().transform;
+        //checkPoint = FindObjectOfType<SC_Checkpoint>().transform;
     }
 
     void Update()

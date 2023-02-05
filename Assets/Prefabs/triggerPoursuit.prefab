@@ -124,3 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ae823d78aaea6488a173f9832fb5ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textRun: {fileID: 0}
+  timeBeforeSwitch: 0.5
+  timeToWatch: 3
+  cam: {fileID: 0}

@@ -1,12 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using PathCreation.Examples;
 using UnityEngine;
 
 public class SC_BeginRacineMere : MonoBehaviour
 {
     private PathFollower pathFollower;
+    public GameObject textRun;
+    public float timeBeforeSwitch;
+    public float timeToWatch;
+    public CinemachineVirtualCamera cam;
+    public bool startCoro;
 
     void Update()
     {
@@ -18,6 +24,22 @@ public class SC_BeginRacineMere : MonoBehaviour
         if (!col.gameObject.CompareTag("Player"))
             return;
         pathFollower = FindObjectOfType<PathFollower>();
+        startCoro = true;
         pathFollower.canKill = true;
+        StartCoroutine(begin());
+    }
+
+    IEnumerator begin()
+    {
+        while (startCoro)
+        {
+            yield return new WaitForSeconds(timeBeforeSwitch);
+            cam.Priority = 11;
+            textRun.SetActive(true);
+            yield return new WaitForSeconds(timeToWatch);
+            cam.Priority = 9;
+            textRun.SetActive(false);
+            startCoro = false;
+        }
     }
 }

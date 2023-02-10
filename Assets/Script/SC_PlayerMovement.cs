@@ -18,11 +18,16 @@ public class SC_PlayerMovement : MonoBehaviour
     public float speed;
     public float jumpForce;
 
+    [Header("Bool")]
     public bool isGrounded;
-    private SC_GrabCompenent grabTarget;
-    private LineRenderer lineRenderer;
     private bool isGrab;
     private bool inTrigger;
+    
+    [Header("Scripts")]
+    private SC_GrabCompenent grabTarget;
+    private LineRenderer lineRenderer;
+    
+    [Header("Color Liane")]
     [SerializeField] private Color playerColor;
 
     private void Awake()

@@ -6,11 +6,18 @@ using UnityEngine.InputSystem;
 
 public class SC_GrabCompenent : MonoBehaviour
 {
+    [Header("Joint2D")]
     public Joint2D joint;
+    
+    [Header("Sprite")]
     public SpriteRenderer rockSprite;
     [SerializeField] private Sprite newRockSprite;
     [SerializeField] private Sprite oldRockSprite;
+    
+    [Header("Color")]
     public Color flowerColor;
+    
+    [Header("Rigidbody")]
     private Rigidbody2D rbRock;
     public Rigidbody2D rb;
 

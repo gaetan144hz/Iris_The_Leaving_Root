@@ -8,6 +8,7 @@ public class SC_DeathZone : MonoBehaviour
 {
     [SerializeField] public Transform checkPoint;
     [SerializeField] private GameObject player;
+    [SerializeField] private Animator fadeSys;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class SC_DeathZone : MonoBehaviour
     {
         if (!col.gameObject.CompareTag("Player"))
             return;
+        fadeSys.SetTrigger("FadeIn");
         col.gameObject.transform.position = checkPoint.position;
         Debug.Log(checkPoint.position);
     }

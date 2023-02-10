@@ -55,7 +55,7 @@ public class SC_PlayerMovement : MonoBehaviour
         Debug.DrawRay(transform.position, transform.up * raycastMaxDistance[0], Color.magenta);
 
         _raycastQueue.Enqueue(raycast);
-        Debug.Log(raycast);//rajoute le resulat d un raycast a la file d'attente
+        //Debug.Log(raycast);//rajoute le resulat d un raycast a la file d'attente
         // rajout de raycast, tabeau de vector2/distance pour les modifiés un par un les valeurs
 
         while (_raycastQueue.Count > 0) //tant que'il y a plus de 0 element dans la file d'attente 
@@ -64,7 +64,7 @@ public class SC_PlayerMovement : MonoBehaviour
                 
             if (result.collider != null)
             {
-                Debug.Log("isGrounded" + isGrounded);
+                //Debug.Log("isGrounded" + isGrounded);
                 isGrounded = true;
             }
         }

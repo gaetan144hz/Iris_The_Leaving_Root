@@ -24,8 +24,14 @@ public class SC_DeathZone : MonoBehaviour
     {
         if (!col.gameObject.CompareTag("Player"))
             return;
-        fadeSys.SetTrigger("FadeIn");
-        col.gameObject.transform.position = checkPoint.position;
+        StartCoroutine(fade(col));
         Debug.Log(checkPoint.position);
+    }
+
+    IEnumerator fade(Collider2D col)
+    {
+        fadeSys.SetTrigger("FadeIn");
+        yield return new WaitForSeconds(1f);
+        col.gameObject.transform.position = checkPoint.position;
     }
 }

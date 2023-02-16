@@ -17,6 +17,7 @@ public class SC_PlayerMovement : MonoBehaviour
     private float moveInput;
     public float speed;
     public float jumpForce;
+    [SerializeField] private float impulse;
 
     [Header("Bool")]
     public bool isGrounded;
@@ -135,7 +136,7 @@ public class SC_PlayerMovement : MonoBehaviour
 
         if (ctx.canceled && grabTarget != null)
         {
-            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+            rb.velocity = new Vector2(moveInput * speed, rb.velocity.x * impulse);
             lineRenderer.enabled = false;
             grabTarget.CancelGrab();
             isGrab = false;

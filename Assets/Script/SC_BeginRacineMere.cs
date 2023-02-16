@@ -40,6 +40,7 @@ public class SC_BeginRacineMere : MonoBehaviour
             cam.Priority = 9;
             textRun.SetActive(false);
             startCoro = false;
+            Destroy(this.gameObject);
         }
     }
 }
